@@ -25,8 +25,14 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install npm -y 
 sudo npm install -g yarn -y 
+echo "127.0.0.1	site1.local" >> /etc/hosts
+
+adduser frappe 
+usermod -aG sudo frappe
+
+cd ~frappe/
 git clone https://github.com/frappe/bench
 pip install -e ./bench
-
-bench --version
-echo "success"
+bench init frappe-bench
+cd frappe-bench
+bench new-site site1.local
