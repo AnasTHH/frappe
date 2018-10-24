@@ -1,4 +1,6 @@
 #!/bin/bash
+adduser frappe 
+sudo usermod -aG sudo frappe
 sudo apt-get update -y
 sudo apt-get upgrade -y 
 sudo apt-get install git -y 
@@ -27,8 +29,7 @@ sudo apt-get install npm -y
 sudo npm install -g yarn -y 
 echo "127.0.0.1	site1.local" >> /etc/hosts
 
-adduser frappe 
-sudo usermod -aG sudo frappe
+
 cd ~frappe/
 su frappe
 git clone https://github.com/frappe/bench
