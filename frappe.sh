@@ -28,16 +28,16 @@ sudo npm install -g yarn -y
 echo "127.0.0.1	site1.local" >> /etc/hosts
 
 adduser frappe 
-usermod -aG sudo frappe
+sudo usermod -aG sudo frappe
 cd ~frappe/
 su frappe
 git clone https://github.com/frappe/bench
-pip install -e ./bench
-bench init frappe-bench
+sudo pip install -e ./bench
+sudo bench init frappe-bench
 cd frappe-bench
-bench new-site site1.local
-bench setup production
-bench setup supervisor
+sudo bench new-site site1.local
+sudo bench setup production
+sudo bench setup supervisor
 sudo supervisorctl reread
 sudo supervisorctl reload
 sudo supervisorctl restart all
