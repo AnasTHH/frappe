@@ -29,7 +29,7 @@ echo "127.0.0.1	site1.local" >> /etc/hosts
 
 adduser frappe 
 usermod -aG sudo frappe
-
+su frappe
 cd ~frappe/
 git clone https://github.com/frappe/bench
 pip install -e ./bench
