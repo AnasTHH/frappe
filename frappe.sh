@@ -40,7 +40,6 @@ su frappe -c "bench init frappe-bench"
 cd ~frappe/frappe-bench
 su frappe -c "bench new-site site1.local"
 sudo bench setup production frappe
-sudo bench setup supervisor frappe
 sudo supervisorctl reread
 sudo supervisorctl reload
 sudo supervisorctl restart all
