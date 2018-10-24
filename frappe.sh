@@ -34,13 +34,13 @@ sudo apt-get update -y
 touch ~/.sudo_as_admin_successful
 cd ~frappe/
 
-sudo su frappe -c "git clone https://github.com/frappe/bench"
-sudo su frappe -c "pip install -e ./bench"
-sudo su frappe -c "bench init frappe-bench"
+sudo git clone https://github.com/frappe/bench
+sudo pip install -e ./bench
+sudo bench init frappe-bench
 cd frappe-bench
-sudo su frappe -c "bench new-site site1.local"
-sudo su frappe -c "bench setup production"
-sudo su frappe -c "bench setup supervisor"
-sudo su frappe -c "supervisorctl reread"
-sudo su frappe -c "supervisorctl reload"
-sudo su frappe -c "supervisorctl restart all"
+sudo bench new-site site1.local
+sudo bench setup production
+sudo bench setup supervisor
+sudo supervisorctl reread
+sudo supervisorctl reload
+sudo supervisorctl restart all
