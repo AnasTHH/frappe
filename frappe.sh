@@ -39,8 +39,8 @@ sudo pip install -e ./bench
 su frappe -c "bench init frappe-bench"
 cd ~frappe/frappe-bench
 su frappe -c "bench new-site site1.local"
-su frappe -c "bench setup production frappe"
-su frappe -c "bench setup supervisor frappe"
+sudo bench setup production frappe
+sudo bench setup supervisor frappe
 sudo supervisorctl reread
 sudo supervisorctl reload
 sudo supervisorctl restart all
