@@ -34,7 +34,7 @@ sudo apt-get update -y
 touch ~/.sudo_as_admin_successful
 cd ~frappe/
 sudo su frappe
-git clone https://github.com/frappe/bench
+sudo git clone https://github.com/frappe/bench
 sudo pip install -e ./bench
 sudo bench init frappe-bench
 cd frappe-bench
