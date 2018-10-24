@@ -1,5 +1,6 @@
 #!/bin/bash
-adduser frappe 
+sudo adduser frappe --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+echo "frappe:frappe" | sudo chpasswd
 sudo usermod -aG sudo frappe
 sudo apt-get update -y
 sudo apt-get upgrade -y 
